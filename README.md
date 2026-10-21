@@ -8,6 +8,8 @@
 **Subject:** Object-Oriented Programming using Python  
 **Project Type:** Python Mini Project
 
+---
+
 ## 1. Project Overview
 
 ClimateIQ is a web-based heatwave monitoring and early-warning system developed to display and analyze climate conditions across selected regions of Maharashtra.
@@ -49,8 +51,6 @@ ClimateIQ aims to organize relevant climate information and present it through a
 | Render | Backend deployment |
 | Neon | Cloud PostgreSQL hosting |
 | Vercel | Frontend deployment |
-
-**Note:** The exact PostgreSQL Python driver and remaining backend dependencies should be checked against `backend/requirements.txt` before final submission.
 
 ## 5. Python Concepts Used
 
@@ -127,6 +127,7 @@ The frontend is deployed on Vercel, the Flask backend on Render, and the Postgre
 - Stakeholder information panel.
 - Loading and error states for API requests.
 - Deployed frontend and backend.
+- Dedicated Python mini project deployment without the DBMS Query Lab.
 
 ## 9. Project Structure
 
@@ -153,7 +154,7 @@ This is a simplified structure showing the main application files.
 
 Open the backend folder and activate the project's Python virtual environment.
 
-Install the backend dependencies from the project's requirements file, where provided:
+Install the backend dependencies from the project's requirements file, if provided:
 
 ```bash
 pip install -r requirements.txt
@@ -188,15 +189,16 @@ The frontend must be configured to communicate with the correct backend URL.
 
 ## 11. Results
 
-The deployed ClimateIQ application was tested for:
+The ClimateIQ application has been developed and deployed with:
 
-- Successful dashboard loading.
-- Display of 10 regions.
+- Dashboard displaying climate information for 10 Maharashtra regions.
 - Region selection and interface updates.
+- Temperature and heat index visualization.
 - Climate charts, alerts and stakeholder information.
-- Successful page refresh.
+- Backend API integration using Flask and JSON.
+- Separate Python mini project deployment without the DBMS Query Lab.
 
-These tests demonstrate the integration of Python Flask, PostgreSQL and React.
+The application demonstrates the integration of Python Flask, PostgreSQL and React.
 
 ## 12. Limitations
 
@@ -215,9 +217,11 @@ These tests demonstrate the integration of Python Flask, PostgreSQL and React.
 
 ## 14. Live Application
 
-**Frontend:** https://climate-intelligence-mauve.vercel.app/
+**Python Mini Project Website:**  
+https://climateiq-python-mini-project.vercel.app/
 
-**Backend API:** https://climateiq-backend.onrender.com/dashboard
+**Backend API:**  
+https://climateiq-backend.onrender.com/dashboard
 
 ## 15. GitHub Repository
 
