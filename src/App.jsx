@@ -1,4 +1,3 @@
-import QueryLab from "./QueryLab";
 import { API_BASE } from "./api";
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -63,7 +62,7 @@ const stakeholders = [
 const nav = [
   ["Dashboard", LayoutDashboard], ["Live Weather", Thermometer], ["Regions & Stations", Map],
   ["Forecast", CloudSun], ["AI Prediction", Zap], ["Alerts & Advisories", Bell],
-  ["Stakeholders", Users], ["Historical Analytics", BarChart3], ["DBMS Query Lab", Database]
+  ["Stakeholders", Users], ["Historical Analytics", BarChart3]
 ];
 
 function riskClass(risk) {
@@ -78,7 +77,6 @@ const [selected, setSelected] = useState(regions[0]);
   const [search, setSearch] = useState("");
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [notifications, setNotifications] = useState(alerts);
   const [displayName, setDisplayName] = useState("Deshna Shah");
   const [dashboardData, setDashboardData] = useState([]);
@@ -227,13 +225,12 @@ useEffect(() => {
 
         <div className="content">
           <div className="page-heading">
-            <div><div className="eyebrow"><span className="live-dot"></span> {page === "DBMS Query Lab" ? "DATABASE EXPLORER" : "LIVE MONITORING"}</div><h1>{page}</h1><p>{page === "DBMS Query Lab" ? "SQL demonstrations and evidence from your DBMS experiments." : "Real-time climate intelligence for heatwave monitoring, prediction and early warning."}</p></div>
-            {page !== "DBMS Query Lab" && <div className="updated"><RefreshCw size={14}/> Last updated <strong>2:35 PM</strong></div>}
+            <div><div className="eyebrow"><span className="live-dot"></span> LIVE MONITORING</div><h1>{page}</h1><p>Real-time climate intelligence for heatwave monitoring, prediction and early warning.</p></div>
+            <div className="updated"><RefreshCw size={14}/> Last updated <strong>2:35 PM</strong></div>
           </div>
 
-          {page === "DBMS Query Lab" && <QueryLab />}
-          {page !== "DBMS Query Lab" && loading && <p role="status">Loading climate data...</p>}
-          {page !== "DBMS Query Lab" && error && <div className="lab-error" role="alert"><AlertTriangle size={18}/><span>{error}. Check your API configuration. DBMS Query Lab remains available from the sidebar.</span></div>}
+          {loading && <p role="status">Loading climate data...</p>}
+          {error && <div className="api-error" role="alert"><AlertTriangle size={18}/><span>{error}. Check your API configuration.</span></div>}
           {page === "Dashboard" && !loading && !error && <Dashboard selected={selected} setSelected={setSelected} filteredRegions={filteredRegions} />}
           {page === "Live Weather" && <LiveWeather
   selected={selected}
